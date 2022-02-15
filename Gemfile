@@ -20,6 +20,10 @@ gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
+#ubacivanje semantic UI
+
+gem 'semantic-ui-sass'
+gem 'jquery-rails'
 
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
