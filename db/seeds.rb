@@ -8,3 +8,4 @@
 User.create(username:"milan",password:"milan1")
 User.create(username:"aleksa",password:"aleksa1")
 User.create(username:"profa",password:"profa1")
+User.create(username:"profa2",password:"profa2")
