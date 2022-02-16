@@ -8,7 +8,9 @@ gem "rails", "~> 7.0.2", ">= 7.0.2.2"
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
-
+#bycrypt
+gem 'bcrypt', '~> 3.1.7'
+gem 'hirb'
 # Use sqlite3 as the database for Active Record
 gem "sqlite3", "~> 1.4"
 
