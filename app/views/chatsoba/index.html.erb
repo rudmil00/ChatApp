@@ -1,6 +1,6 @@
 <h4 class="ui center aligned medium icon header">
   <i class="circular orange chat icon"></i>
-  Dopisivanje pocinje sad!!!
+ Dopisivanje pocinje sada ! ! !
 </h4>
 
 <div class="ui two column grid">
@@ -8,34 +8,15 @@
     <div class="ui fluid raised card chatbox">
       <div class="content">
         <div class="ui feed">
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <a>Elliot Fu</a> added <a>Jenny Hess</a> as a friend
+          <% @porukas.each do |poruka| %>
+            <div class="event">
+              <div class="content">
+                <div class="summary">
+                  <em><%= poruka.user.username %></em>: <%= poruka.body %>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <a>Stevie Feliciano</a> added <a>Elliot Fu</a> as a friend
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <a>Helen Troy</a> added <a>Christian Rocha</a> as a friend
-              </div>
-            </div>
-          </div>
-          <div class="event">
-            <div class="content">
-              <div class="summary">
-                 <em>Christian Rocha</em>: Test message
-              </div>
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
       <div class="extra content">
@@ -69,4 +50,3 @@
     </div>
   </div>
 </div>
-
