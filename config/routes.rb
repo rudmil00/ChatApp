@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sesija/login'
   get 'chatsoba/index'
 
   root 'chatsoba#index'
