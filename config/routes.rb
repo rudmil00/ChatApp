@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  get 'sesija/login'
-  get 'chatsoba/index'
-
-  root 'chatsoba#index'
+ root 'chatsoba#index'
+  get 'login', to: 'sesija#login'
+  post 'login', to: 'sesija#create'
+  delete 'logout', to: 'sesija#destroy'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
