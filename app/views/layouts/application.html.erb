@@ -7,12 +7,26 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_importmap_tags %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+    <script src=
+      "https://code.jquery.com/jquery-3.1.1.min.js" 
+        integrity=
+      "sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" 
+        crossorigin="anonymous">
+    </script>
+   <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js">
+   </script>
   </head>
 
+  
+
+
   <body>
-   <div class="ui small inverted  menu">
+   <div class="ui small inverted menu">
       <div class="ui container">
     <%= render 'chatsoba/header'%>
      </div>
@@ -21,5 +35,13 @@
       <%= render 'layouts/oblacici' %>
     <%= yield %>
     </div>
+
+    
   </body>
+
+  <script>
+       $('.message .close').on('click', function() {
+          $(this).closest('.message').transition('hide');
+       });
+    </script>
 </html>

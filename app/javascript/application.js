@@ -16,10 +16,11 @@ import "controllers";
 //
 //= require rails-ujs
 //= require jquery
+//= require jquery_ujs
+//= require_tree .
 //= require activestorage
 //= require turbolinks
 //= require semantic-ui
-//= require_tree .
 $(document).on("turbolinks:load", function () {
   $(".ui.dropdown").dropdown();
   $(".message .close").on("click", function () {

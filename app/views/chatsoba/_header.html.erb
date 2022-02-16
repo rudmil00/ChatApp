@@ -5,17 +5,21 @@
 <div class="right menu">
 
 
+  <!-- simple je omogucio sve--> %>
   <div class="ui dropdown item simple">
     Account <i class="dropdown icon"></i>
     <div class="menu">
+
+
       <% if logged_in? %>
       <!--logout_path -->
-      <%= link_to "Logout", login_path, method: :delete, class: "item" %>
+        <%= button_to "Logout", logout_path, method: :delete, class: "item" %>
       <% else %>
         <%= link_to "Log in", login_path, class: "item" %>
       <% end %>
     </div>
   </div>
+
   <% if !logged_in? %>
     <div class="item">
       <%= link_to "Log in", login_path, class: "ui primary button" %>

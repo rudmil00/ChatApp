@@ -1,5 +1,7 @@
 class SesijaController < ApplicationController
-    before_action :logged_in_redirect, only: [:new, :create]
+  
+  before_action :logged_in_redirect, only: [:new, :create]
+  
   def login
   end
 
@@ -12,21 +14,20 @@ class SesijaController < ApplicationController
       flash[:success] = "You have successfully logged in"
       redirect_to "/"
     else
-      flash.now[:error] = "There was something wrong with your login information"
-     # render 'login'
-     redirect_to "/login"
+      flash[:error] = "There was something wrong with your login information"
+      redirect_to "/login"
     end
 
 
   end
 
-   def destroy
+  def destroy
     session[:user_id] = nil
     flash[:success] = "You have successfully logged out"
     redirect_to "/login"
   end
 
-        private
+  private
 
   def logged_in_redirect
     if logged_in?
