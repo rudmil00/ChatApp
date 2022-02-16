@@ -1,4 +1,5 @@
 class SesijaController < ApplicationController
+    before_action :logged_in_redirect, only: [:new, :create]
   def login
   end
 
@@ -23,6 +24,15 @@ class SesijaController < ApplicationController
     session[:user_id] = nil
     flash[:success] = "You have successfully logged out"
     redirect_to "/login"
+  end
+
+        private
+
+  def logged_in_redirect
+    if logged_in?
+      flash[:error] = "You are already logged in"
+      redirect_to root_path
+    end
   end
 
 end
