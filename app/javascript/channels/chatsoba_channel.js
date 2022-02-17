@@ -20,9 +20,18 @@ consumer.subscriptions.create("ChatsobaChannel", {
     // Called when there's incoming data on the websocket for this channel
     $('#polje-za-poruke').append(data)
     
-    
+    // $('#message_body').on('keydown', function(e) {
+    //   if (e.keyCode == 13) {
+    //     $('button').click();
+    //     e.target.value = "";
+    //   };
+    // });
+
+  
     if ($('#poruke').length > 0) {
-      $('#poruke').scrollBottom($('#poruke')[0].scrollHeight)
+      $('#poruke').scrollTop($('#poruke')[0].scrollHeight)
     }
+
+    
   }
 })

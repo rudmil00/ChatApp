@@ -53,8 +53,14 @@
 </div>
 
 <script>
-alert("poruka")
          if ($('#poruke').length > 0) {
     $('#poruke').scrollTop($('#poruke')[0].scrollHeight);
   }
+
+    $('#poruka_body').on('keydown', function(e) {
+    if (e.keyCode == 13) {
+      $('button').click();
+      e.target.value = "";
+    };
+  });
 </script>
