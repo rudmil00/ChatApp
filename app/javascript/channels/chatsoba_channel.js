@@ -11,5 +11,6 @@ consumer.subscriptions.create("ChatsobaChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
+    $('#polje-za-poruke').append(data)
   }
 });
