@@ -21,9 +21,20 @@ import "controllers";
 //= require activestorage
 //= require turbolinks
 //= require semantic-ui
-$(document).on("turbolinks:load", function () {
-  $(".ui.dropdown").dropdown();
-  $(".message .close").on("click", function () {
-    $(this).closest(".message").transition("fade");
-  });
-});import "channels"
+
+
+// NE RADI
+// $(document).on('turbolinks:load', function() {
+//   // $(".ui.dropdown").dropdown();
+  
+//   // $(".message .close").on("click", function () {
+//   //   $(this).closest(".message").transition("fade");
+//   // });
+
+//   alert("pooruasdfka")
+//   // scroll_bottom();
+
+// });
+
+
+import "channels"

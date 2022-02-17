@@ -6,7 +6,7 @@
 <div class="ui two column grid">
   <div class="twelve wide column">
     <div class="ui fluid raised card chatbox">
-      <div class="content">
+      <div class="content" id="poruke">
         <div class="ui feed" id="polje-za-poruke">
         <!-- partial moguc... -->
           <% @porukas.each do |poruka| %>
@@ -51,3 +51,10 @@
     </div>
   </div>
 </div>
+
+<script>
+alert("poruka")
+         if ($('#poruke').length > 0) {
+    $('#poruke').scrollTop($('#poruke')[0].scrollHeight);
+  }
+</script>
