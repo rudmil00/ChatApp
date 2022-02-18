@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  def new
-    # @user = User.new
+  
+  def registracija
+    @user = User.new
   end
 
   def create
@@ -8,9 +9,10 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      flash[:success] = "Uspešno ste napravili nalog 😎 {@user.username}"
       redirect_to "/"
+      flash[:success] = "Uspešno ste napravili nalog."
     else
+       flash[:error] = "Korisničko ime već postoji."
        redirect_to '/signup'
     end
        

@@ -1,6 +1,6 @@
 class SesijaController < ApplicationController
   
-  before_action :logged_in_redirect, only: [:new, :create]
+  before_action :logged_in_redirect, only: [:new, :create, :login]
   
   def login
   end
@@ -11,10 +11,15 @@ class SesijaController < ApplicationController
     
     if user && user.authenticate(params[:sesija][:password])
       session[:user_id] = user.id
-      flash[:success] = "You have successfully logged in"
+      flash[:success] = "Uspešno ste se prijavili."
       redirect_to "/"
+    elsif !user.authenticate(params[:sesija][:password])
+      flash[:error] = "Korisničko ime ili šifra nisu ispravni!"
+      redirect_to "/login"
+    
+    # hocu da ubacimo da ne mozes da se prijavis ako si prijavljen
     else
-      flash[:error] = "There was something wrong with your login information"
+      flash[:error] = "Već ste prijavljeni."
       redirect_to "/login"
     end
 
@@ -23,7 +28,7 @@ class SesijaController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    flash[:success] = "You have successfully logged out"
+    flash[:success] = "Uspešno ste se odjavili."
     redirect_to "/login"
   end
 
@@ -31,7 +36,7 @@ class SesijaController < ApplicationController
 
   def logged_in_redirect
     if logged_in?
-      flash[:error] = "You are already logged in"
+      flash[:error] = "Već ste prijavljeni."
       redirect_to root_path
     end
   end

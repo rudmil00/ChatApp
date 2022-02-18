@@ -6,13 +6,14 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  # sklonio dva uzvicnika
   def logged_in?
-    !!current_user
+    current_user
   end
 
   def require_user
     if !logged_in?
-      flash[:error] = "Prvo se morate prijaviti ! !"
+      flash[:error] = "Prvo se morate prijaviti."
       redirect_to login_path
     end
   end
