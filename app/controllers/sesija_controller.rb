@@ -1,6 +1,6 @@
 class SesijaController < ApplicationController
   
-  before_action :logged_in_redirect, only: [:new, :create, :login]
+  before_action :logged_in_redirect, only: [:create, :login]
   
   def login
   end
