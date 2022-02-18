@@ -1,6 +1,7 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
 import "@hotwired/turbo-rails";
 import "controllers";
+import "channels";
 // Loads all Semantic javascripts
 // This is a manifest file that'll be compiled into application.js, which will include all the files
 // listed below.
@@ -22,19 +23,18 @@ import "controllers";
 //= require turbolinks
 //= require semantic-ui
 
-
 // NE RADI
-// $(document).on('turbolinks:load', function() {
-//   // $(".ui.dropdown").dropdown();
-  
+// $(document).on("turbolinks:load", function () {
+//   $(".ui.dropdown").dropdown();
+
 //   // $(".message .close").on("click", function () {
 //   //   $(this).closest(".message").transition("fade");
 //   // });
 
-//   alert("pooruasdfka")
-//   // scroll_bottom();
-
+//   //   alert("pooruasdfka")
+//   //   // scroll_bottom();
 // });
 
-
-import "channels"
+// // $(document).ready(function () {
+// //   $(".ui.dropdown").dropdown();
+// // });
