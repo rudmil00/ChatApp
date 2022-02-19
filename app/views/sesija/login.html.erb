@@ -1,10 +1,10 @@
 <h2 class="ui center aligned large header">
-  Dobrodošli.... - <em>a complete Chat App</em>
+ Group Chat App
 </h2>
 
 <h4 class="ui center aligned medium icon header">
   <i class="circular orange power off tiny icon"></i>
-  Log in to continue
+  Prijavite se ili napravite nalog
 </h4>
 
 
@@ -14,27 +14,27 @@
     <!-- sesija/session -->
       <%= form_for(:sesija, html: {class: "ui form", role: "form"}, url: login_path) do |f| %>
         <div class="field">
-          <%= f.label :username, "Username" %>
+          <%= f.label :username, "Korisničko ime" %>
           <div class="ui left icon input">
-            <%= f.text_field :username, placeholder: "Username" %>
+            <%= f.text_field :username, placeholder: "korisničko ime" %>
             <i class="user icon"></i>
           </div>
         </div>
         <div class="field">
-          <%= f.label :password, "Password" %>
+          <%= f.label :password, "Šifra" %>
           <div class="ui left icon input">
-            <%= f.password_field :password, placeholder: "Password" %>
+            <%= f.password_field :password, placeholder: "šifra" %>
             <i class="lock icon"></i>
           </div>
         </div>
-        <%= f.button "Login", class: "ui orange submit button" %>
+        <%= f.button "Uloguj se", class: "ui orange submit button" %>
       <% end %>
     </div>
     <div class="middle aligned column">
      <a href ="/signup" >
       <div class="ui big orange button">
         <i class="signup icon"></i>
-         Napravi nalog
+         Kreiraj nalog
       </div>
     </a> 
     </div>

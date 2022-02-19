@@ -1,22 +1,22 @@
 
-<%= link_to "Chatroom", root_path, class: "item" %>
+<%= link_to "Soba za ćaskanje", root_path, class: "item" %>
 <a class="item">
-  Messages
+  Prijatelji
 </a>
 <div class="right menu">
 
 
   <!-- simple je omogucio sve--> 
   <div class="ui dropdown item simple">
-    Account <i class="dropdown icon"></i>
+    Nalog <i class="dropdown icon"></i>
     <div class="menu">
 
 
       <% if logged_in? %>
       <!--logout_path -->
-        <%= link_to "Logout", logout_path, data: { "turbo-method": :delete }, class: "item" %>
+        <%= link_to "Odjavi se", logout_path, data: { "turbo-method": :delete }, class: "item" %>
       <% else %>
-        <%= link_to "Log in", login_path, class: "item" %>
+        <%= link_to "Prijavi se", login_path, class: "item" %>
       <% end %>
     </div>
   </div>

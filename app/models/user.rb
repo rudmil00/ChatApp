@@ -5,4 +5,5 @@ class User < ApplicationRecord
     
              has_many :porukas
   has_secure_password
+  
 end
