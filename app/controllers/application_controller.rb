@@ -1,6 +1,9 @@
 class ApplicationController < ActionController::Base
-    
-     helper_method :current_user, :logged_in?
+  
+  helper_method :current_user, :logged_in?
+  # njemu je pisalo if: :user_signed_in?
+  before_action :set_last_seen_at, if: :logged_in?
+
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -16,5 +19,9 @@ class ApplicationController < ActionController::Base
       flash[:error] = "Prvo se morate prijaviti."
       redirect_to login_path
     end
+  end
+
+  def set_last_seen_at
+    current_user.touch(:last_seen_at)
   end
 end

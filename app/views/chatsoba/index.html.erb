@@ -36,7 +36,10 @@
   
 
   <div class="four wide column">
-    
+      <ul id="online-users">
+        <%= render partial: "online", collection: User.online, as: :user %>
+      </ul>
+  </div>
 </body>
 <script>
          if ($('#poruke').length > 0) {
