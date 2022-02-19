@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   post 'login', to: 'sesija#create'
   delete 'logout', to: 'sesija#destroy'
   get 'signup', to: 'users#registracija'
-
+  get 'prijatelji', to:'prijatelji#prijatelji'
   post 'signup', to: 'users#create'
   # pre je bilo resources :users, except: [:registracija]
 
