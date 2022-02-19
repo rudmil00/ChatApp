@@ -50,6 +50,12 @@ class UsersController < ApplicationController
        
   end
 
+  def destroy 
+    @user.destroy
+    session[:user_id]=nil if @user==current_user
+    flash[:notice]="Uspesno ste obrisali nalog !"
+    redirect_to login_path
+  end
   
 
 
