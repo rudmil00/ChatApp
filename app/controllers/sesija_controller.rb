@@ -8,26 +8,19 @@ class SesijaController < ApplicationController
   def create
 
     user = User.find_by(username:params[:sesija][:username])
-    if user.nil? == false
+
+
+    # hocu da ubacimo da ne mozes da se prijavis ako si prijavljen
+
     if user && user.authenticate(params[:sesija][:password])
       session[:user_id] = user.id
       flash[:success] = "Uspešno ste se prijavili."
       redirect_to "/"
-    elsif !user.authenticate(params[:sesija][:password])
+    else 
       flash[:error] = "Korisničko ime ili šifra nisu ispravni!"
       redirect_to "/login"
-    
-    # hocu da ubacimo da ne mozes da se prijavis ako si prijavljen
-    else
-      flash[:error] = "Već ste prijavljeni."
-      redirect_to "/login"
     end
-  end
 
-  if user.nil? == true
-   flash[:error] = "Korisničko ime ili šifra nisu ispravni!"
-      redirect_to "/login"
-  end
 
 end
 

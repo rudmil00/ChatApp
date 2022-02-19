@@ -1,0 +1,26 @@
+<h1>Izmenite nalog</h1>
+<div class="ui form">
+  <div class="column">
+    <%= form_for(:user, html: {class: "ui form", role: "form"}, method: :put, url: user_path) do |f| %>
+        <div class="field">
+          <%= f.label :username, "Korisničko ime" %>
+          <div class="ui left icon input">
+            <%= f.text_field :username, placeholder: "Ukucajte korisničko ime" %>
+            <i class="user icon"></i>
+          </div>
+        </div>
+        <div class="field">
+          <%= f.label :password, "Šifra" %>
+          <div class="ui left icon input">
+            <%= f.password_field :password, placeholder: "Ukucajte šifru" %>
+            <i class="lock icon"></i>
+          </div>
+        </div>
+         
+      
+        <%= f.submit "Izmeni nalog", class: "ui orange submit button" %>
+      <% end %>
+  </div>
+
+
+</div>

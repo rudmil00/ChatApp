@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get 'signup', to: 'users#registracija'
   get 'prijatelji', to:'prijatelji#prijatelji'
   post 'signup', to: 'users#create'
-  # pre je bilo resources :users, except: [:registracija]
+  
+  resources :users, except: [:registracija]
+  # resources :users
 
 
   post 'message', to: 'messages#create'
