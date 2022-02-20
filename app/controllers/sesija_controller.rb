@@ -9,9 +9,6 @@ class SesijaController < ApplicationController
 
     user = User.find_by(username:params[:sesija][:username])
 
-
-    # hocu da ubacimo da ne mozes da se prijavis ako si prijavljen
-
     if user && user.authenticate(params[:sesija][:password])
       session[:user_id] = user.id
       flash[:success] = "Uspešno ste se prijavili."

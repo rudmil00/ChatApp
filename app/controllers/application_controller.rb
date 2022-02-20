@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   
   helper_method :current_user, :logged_in?
-  # njemu je pisalo if: :user_signed_in?
   before_action :set_last_seen_at, if: :logged_in?
 
 

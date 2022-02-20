@@ -15,14 +15,27 @@ class UsersController < ApplicationController
 
     @user = User.find(params[:id])
 
-    if @user.update(user_params)
+    lozinka = BCrypt::Password.new(@user.password_digest.salt)
+    # BCrypt::Password.create(string, sifra: user_params[:password])
+
+    if user_params[:username].length < 6 || user_params[:username].length > 20
+      flash[:error] = "Korisničko ime mora imati između 6 i 25 znakova!"
+      redirect_to user_path
+  
+    elsif user_params[:password].length < 6 || user_params[:password].length > 25
+      flash[:error] = "Šifra mora imati između 6 i 25 znakova!"
+      redirect_to user_path
+
+    elsif @user.update(user_params)
       flash[:notice] = "Uspešno ste izmenili Vaš nalog."
       redirect_to "/"
-
+  
     else
-      flash[:error] = "Niste ništa izmenili."
+      flash[:error] = "Korisničko ime već postoji."
       redirect_to user_path
+
     end
+
     
   end
 
@@ -56,7 +69,7 @@ class UsersController < ApplicationController
     
      Poruka.where(:user_id => current_user[:id]).destroy_all
     @user.delete
-    flash[:notice]="Uspesno ste obrisali nalog !"
+    flash[:notice]="Uspesno ste obrisali nalog!"
 
     session.delete(:user_id)
     @current_user = nil
