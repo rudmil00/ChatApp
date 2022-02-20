@@ -23,7 +23,7 @@ import "channels";
 //= require turbolinks
 //= require semantic-ui
 
-// NE RADI
+// // NE RADI
 // $(document).on("turbolinks:load", function () {
 //   $(".ui.dropdown").dropdown();
 
@@ -35,6 +35,6 @@ import "channels";
 //   //   // scroll_bottom();
 // });
 
-// // $(document).ready(function () {
-// //   $(".ui.dropdown").dropdown();
-// // });
+// // // $(document).ready(function () {
+// // //   $(".ui.dropdown").dropdown();
+// // // });

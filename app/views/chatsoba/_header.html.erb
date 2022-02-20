@@ -1,7 +1,7 @@
 
 <%= link_to "Soba za ćaskanje", root_path, class: "item" %>
 
-<%= link_to "Prijatelji", prijatelji_path, class: "item" %>
+
 <div class="right menu">
 
 
@@ -9,19 +9,18 @@
   <div class="ui dropdown item simple">
     Nalog <i class="dropdown icon"></i>
     <div class="menu">
-<!-- data: { "turbo-method": :delete }
- 
 
--->
+ 
       <% if logged_in? %>
       <!--logout_path -->
-        <%= link_to "Odjavi se", logout_path, data: { "turbo-method": :delete }, class: "item" %>
+        <%= link_to "Odjavi se", logout_path, method: :delete , class: "item" %>
         <%= link_to "Izmeni", edit_user_path(current_user), class: "item" %>
-        <%= link_to "Obrisi nalog", user_path(current_user), data: { "turbo-method": :delete }, class: "item"%>
+        <%= link_to "Obrisi nalog", user_path(current_user),method: :delete , data: { confirm: "Da li ste sigurni da želite zauvek da obrišete Vaš nalog ?"}, class: "item"%>
 
 
       <% else %>
         <%= link_to "Prijavi se", login_path, class: "item" %>
+         <%= link_to "Napravi nalog", signup_path, class: "item" %>
       <% end %>
     </div>
   </div>

@@ -41,7 +41,7 @@ class UsersController < ApplicationController
 
     elsif @user.save
       flash[:success] = "Uspešno ste napravili nalog."
-      redirect_to "/"
+      redirect_to "/login"
 
     else
        flash[:error] = "Korisničko ime već postoji."
@@ -51,10 +51,10 @@ class UsersController < ApplicationController
   end
 
   def destroy 
-  
+           
     @user = User.find(params[:id])
     
-
+     Poruka.where(:user_id => current_user[:id]).destroy_all
     @user.delete
     flash[:notice]="Uspesno ste obrisali nalog !"
 

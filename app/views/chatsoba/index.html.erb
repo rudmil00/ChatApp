@@ -36,11 +36,13 @@
   
 
   <div class="four wide column">
-      <ul id="online-users">
+  <h1 class='online-users naslov'>Online korisnici</h1>
+      <ul class="online-users">
         <%= render partial: "online", collection: User.online, as: :user %>
       </ul>
   </div>
 </body>
+
 <script>
          if ($('#poruke').length > 0) {
     $('#poruke').scrollTop($('#poruke')[0].scrollHeight);
