@@ -15,9 +15,7 @@ class UsersController < ApplicationController
 
     @user = User.find(params[:id])
 
-    lozinka = BCrypt::Password.new(@user.password_digest.salt)
-    # BCrypt::Password.create(string, sifra: user_params[:password])
-
+    
     if user_params[:username].length < 6 || user_params[:username].length > 20
       flash[:error] = "Korisničko ime mora imati između 6 i 25 znakova!"
       redirect_to user_path
